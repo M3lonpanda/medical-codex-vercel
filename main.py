@@ -1,4 +1,4 @@
-from fastapi import FastAPI, request
+from fastapi import FastAPI
 import pandas as pd 
 
 df = pd.read_csv('./data/diagnoses2018.csv')

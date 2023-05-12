@@ -1,1 +1,2 @@
 fastapi==0.95.0
+pandas

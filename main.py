@@ -14,8 +14,8 @@ async def preview():
     result = top10rows.to_json(orient="records")
     return {result}
 
-@app.get("/age_code/{value}")
-async def age_code(value):
+@app.get("/agecode/{value}")
+async def agecode(value):
     print('value: ', value)
     filtered = df[df['age_group_code'] == value]
     if len(filtered) <= 0:

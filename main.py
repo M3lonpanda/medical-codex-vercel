@@ -14,18 +14,18 @@ async def preview():
     result = top10rows.to_json(orient="records")
     return {result}
 
-@app.get('/serviceyear/{value}')
-async def serviceyear(value):
+@app.get("/age_code/{value}")
+async def age_code(value):
     print('value: ', value)
-    filtered = df[df['service_year'] == value]
+    filtered = df[df['age_group_code'] == value]
     if len(filtered) <= 0:
         return {'There is nothing here'}
     else: 
         return {filtered.to_json(orient="records")}
 
-@app.get('/serviceyear/{value}/sex/{value2}')
-async def serviceyear2(value, value2):
-    filtered = df[df['service_year'] == value]
+@app.get('/agecode/{value}/sex/{value2}')
+async def agecode2(value, value2):
+    filtered = df[df['age_group_code'] == value]
     filtered2 = filtered[filtered['sex'] == value2]
     if len(filtered2) <= 0:
         return {'There is nothing here'}
